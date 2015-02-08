@@ -1,0 +1,1857 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="cover" page-height="11in" page-width="8.5in" margin-top="0.5in" margin-bottom="1.0in" margin-left="1.25in" margin-right="1.25in">
+            <fo:region-body region-name="body" margin-top="24pt" margin-bottom="0in" margin-left="0in" margin-right="0in"/>
+        </fo:simple-page-master>
+        <fo:simple-page-master master-name="blank" page-height="11in" page-width="8.5in" margin-top="0.5in" margin-bottom="1.0in" margin-left="1.25in" margin-right="1.25in">
+            <fo:region-body region-name="body" margin-top="24pt" margin-bottom="0in" margin-left="0in" margin-right="0in"/>
+        </fo:simple-page-master>
+        <fo:simple-page-master master-name="first" page-height="11in" page-width="8.5in" margin-top="0.5in" margin-bottom="1in" margin-left="1.25in" margin-right="1.25in">
+            <fo:region-body region-name="body" margin-top="24pt" margin-bottom="0in" margin-left="0in" margin-right="0in"/>
+        </fo:simple-page-master>
+        <fo:simple-page-master master-name="verso" page-height="11in" page-width="8.5in" margin-top="0.5in" margin-bottom="1.0in" margin-left="1.25in" margin-right="1.25in">
+            <fo:region-body region-name="body" margin-top="36pt" margin-bottom="0in" margin-left="0in" margin-right="0in"/>
+            <fo:region-before region-name="verso-header" display-align="before" extent="36pt"/>
+        </fo:simple-page-master>
+        <fo:simple-page-master master-name="recto" page-height="11in" page-width="8.5in" margin-top="0.5in" margin-bottom="1.0in" margin-left="1.25in" margin-right="1.25in">
+            <fo:region-body region-name="body" margin-top="36pt" margin-bottom="0in" margin-left="0in" margin-right="0in"/>
+            <fo:region-before region-name="recto-header" extent="36pt" display-align="before"/>
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="cover-sequence">
+            <fo:repeatable-page-master-alternatives>
+                <fo:conditional-page-master-reference master-reference="cover"/>
+                <fo:conditional-page-master-reference master-reference="blank" blank-or-not-blank="blank"/>
+            </fo:repeatable-page-master-alternatives>
+        </fo:page-sequence-master>
+        <fo:page-sequence-master master-name="content-sequence">
+            <fo:single-page-master-reference master-reference="first"/>
+            <fo:repeatable-page-master-alternatives>
+                <fo:conditional-page-master-reference odd-or-even="even" master-reference="verso"/>
+                <fo:conditional-page-master-reference odd-or-even="odd" master-reference="recto"/>
+            </fo:repeatable-page-master-alternatives>
+        </fo:page-sequence-master>
+        <fo:page-sequence-master master-name="diagnostics-sequence">
+            <fo:repeatable-page-master-alternatives>
+                <fo:conditional-page-master-reference odd-or-even="odd" master-reference="recto"/>
+                <fo:conditional-page-master-reference odd-or-even="even" master-reference="verso"/>
+            </fo:repeatable-page-master-alternatives>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="cover-sequence" force-page-count="even">
+        <fo:static-content flow-name="xsl-footnote-separator">
+            <fo:block end-indent="4in" margin-top="12pt" space-after="8pt" border-width="0.5pt" border-bottom-style="solid"/>
+        </fo:static-content>
+        <fo:flow flow-name="body">
+            <fo:block line-stacking-strategy="font-height" line-height-shift-adjustment="disregard-shifts">
+                <fo:block space-after="12pt">
+                    <fo:block font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" space-before="6pt" font-size="14pt" line-height="17pt">Septic Shock Due to Candidemia: Outcomes and Predictors of Shock Development</fo:block>
+                </fo:block>
+                <fo:table space-after="24pt" border-style="none">
+                    <fo:table-body>
+                        <fo:table-row width="2.75in">
+                            <fo:table-cell>
+                                <fo:table border-style="solid" border-width="1pt" width="2.75in">
+                                    <fo:table-body>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:wrapper space-before="6pt" space-after="6pt" font-size="10pt" line-height="18pt">Journal Information</fo:wrapper>
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Journal ID (
+                                                        <fo:inline>nlm-ta</fo:inline>):
+                                                    </fo:inline>J Clin Med Res
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Journal ID (
+                                                        <fo:inline>publisher-id</fo:inline>):
+                                                    </fo:inline>Elmer Press
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Title: </fo:inline>Journal of Clinical Medicine Research
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">ISSN (
+                                                        <fo:inline>print</fo:inline>):
+                                                    </fo:inline>1918-3003
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">ISSN (
+                                                        <fo:inline>electronic</fo:inline>):
+                                                    </fo:inline>1918-3011
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Publisher: </fo:inline>Elmer Press
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                    </fo:table-body>
+                                </fo:table>
+                            </fo:table-cell>
+                            <fo:table-cell width="0.5in">
+                                <fo:block/>
+                            </fo:table-cell>
+                            <fo:table-cell width="2.75in">
+                                <fo:table border-style="none" width="2.75in">
+                                    <fo:table-body>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:wrapper space-before="6pt" space-after="6pt" font-size="10pt" line-height="18pt">Article/Issue Information</fo:wrapper>
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Date accepted: </fo:inline>10 March 2011
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Publication date (
+                                                        <fo:inline>print</fo:inline>):
+                                                    </fo:inline>04 April 2011
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Publication date (
+                                                        <fo:inline>electronic</fo:inline>):
+                                                    </fo:inline>04 April 2011
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Volume: </fo:inline>3
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Issue: </fo:inline>2
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Pages: </fo:inline>65-71
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                        <fo:table-row>
+                                            <fo:table-cell padding-top="2pt" padding-left="0.1in" border-style="solid" border-width="1pt">
+                                                <fo:block font-size="9pt">
+                                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">DOI: </fo:inline>10.4021/jocmr536w
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                    </fo:table-body>
+                                </fo:table>
+                            </fo:table-cell>
+                        </fo:table-row>
+                    </fo:table-body>
+                </fo:table>
+                <fo:block font-family="serif" font-size="10pt" line-height="12pt" font-style="normal" font-weight="normal" text-align="start">
+                    <fo:block space-before="6pt">
+                        <fo:block font-size="9pt">
+                            <fo:block font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Categories</fo:block>
+                            <fo:block margin-left="3em">
+                                <fo:block font-size="9pt">
+                                    <fo:inline font-family="sans-serif" keep-with-next.within-page="always" font-size="8pt" font-weight="bold">Subject: </fo:inline>Original Article
+                                </fo:block>
+                            </fo:block>
+                        </fo:block>
+                    </fo:block>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="content-sequence" initial-page-number="1">
+        <fo:static-content flow-name="recto-header">
+            <fo:block font-family="sans-serif" font-size="9pt" line-height="12pt">
+                <fo:table border-style="none" width="100%">
+                    <fo:table-body>
+                        <fo:table-row>
+                            <fo:table-cell width="5in">
+                                <fo:block text-align="left">Septic Shock Due to Candidemia: Outcomes and Predictors of Shock Development</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell>
+                                <fo:block/>
+                            </fo:table-cell>
+                            <fo:table-cell width="0.5in">
+                                <fo:block text-align="right">
+                                    <fo:page-number/>
+                                </fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                    </fo:table-body>
+                </fo:table>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="verso-header">
+            <fo:block font-family="sans-serif" font-size="9pt" line-height="12pt">
+                <fo:table border-style="none" width="100%">
+                    <fo:table-body>
+                        <fo:table-row>
+                            <fo:table-cell width="0.5in">
+                                <fo:block text-align="left">
+                                    <fo:page-number/>
+                                </fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell>
+                                <fo:block/>
+                            </fo:table-cell>
+                            <fo:table-cell width="5in">
+                                <fo:block text-align="right">Septic Shock Due to Candidemia: Outcomes and Predictors of Shock Development</fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                    </fo:table-body>
+                </fo:table>
+            </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-footnote-separator">
+            <fo:block end-indent="4in" margin-top="12pt" space-after="8pt" border-width="0.5pt" border-bottom-style="solid"/>
+        </fo:static-content>
+        <fo:flow flow-name="body">
+            <fo:block line-stacking-strategy="font-height" line-height-shift-adjustment="disregard-shifts" widows="2" orphans="2">
+                <fo:block>
+                    <fo:footnote>
+                        <fo:inline vertical-align="super" font-size="60%"/>
+                        <fo:footnote-body start-indent="0pc" space-before="4pt" font-family="serif" font-size="9pt" font-weight="normal" line-height="10pt">
+                            <fo:block>
+                                <fo:block>Copyright 2011, Guzman et al.</fo:block>
+                                <fo:block>
+                                    <fo:inline>Copyright </fo:inline>2011
+                                </fo:block>
+                                <fo:block>
+                                    <fo:block space-before="4pt">
+                                        <fo:inline>License (
+                                            <fo:inline>open access</fo:inline>):
+                                        </fo:inline>This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.
+                                    </fo:block>
+                                </fo:block>
+                            </fo:block>
+                        </fo:footnote-body>
+                    </fo:footnote>
+                    <fo:block font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="14pt" line-height="17pt">Septic Shock Due to Candidemia: Outcomes and Predictors of Shock Development</fo:block>
+                </fo:block>
+                <fo:block space-before="8pt" space-after="8pt" border-bottom-style="solid" border-bottom-width="0.5pt"/>
+                <fo:block font-family="sans-serif" font-size="8pt">
+                    <fo:table>
+                        <fo:table-body>
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block>
+                                        <fo:block>Jorge A Guzman
+                                            <fo:inline vertical-align="super" font-size="60%"/>
+                                            <fo:inline vertical-align="super" font-size="60%"/>
+                                        </fo:block>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-left="2em">
+                                    <fo:block/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block>
+                                        <fo:block>Ronny Tchokonte
+                                            <fo:inline vertical-align="super" font-size="60%"/>
+                                        </fo:block>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-left="2em">
+                                    <fo:block/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row>
+                                <fo:table-cell>
+                                    <fo:block>
+                                        <fo:block>Jack D Sobel
+                                            <fo:inline vertical-align="super" font-size="60%"/>
+                                        </fo:block>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-left="2em">
+                                    <fo:block/>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-body>
+                    </fo:table>
+                    <fo:block>a
+Section of Critical Care, Respiratory Institute, Cleveland Clinic, Cleveland, USA
+                    </fo:block>
+                    <fo:block>b
+Pulmonary and Critical Care, Wayne State University, Detroit, USA
+                    </fo:block>
+                    <fo:block>c
+Division of Infectious Diseases, Wayne State University, Detroit, USA
+                    </fo:block>
+                    <fo:block space-before="6pt" space-after="6pt">
+                        <fo:block>
+Corresponding author: Jorge A Guzman, 9500 Euclid Ave, G6-156, Cleveland OH 44195, USA.  Email:
+                            <fo:inline font-family="monospace" font-weight="normal"> guzmanj@ccf.org</fo:inline>
+                        </fo:block>
+                        <fo:block>
+                            <fo:block space-before="4pt" id="d7e80">short title: Septic Shock Due to Candidemia</fo:block>
+                        </fo:block>
+                    </fo:block>
+                </fo:block>
+                <fo:block space-before="8pt" space-after="8pt" border-bottom-style="solid" border-bottom-width="0.5pt"/>
+                <fo:block space-before="6pt" space-after="6pt">
+                    <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="16pt" line-height="18pt">
+                        <fo:inline>Abstract</fo:inline>
+                    </fo:block>
+                    <fo:block space-before="12pt">
+                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="12pt" line-height="14pt">Background</fo:block>
+                        <fo:block space-before="4pt">The present report describes the outcomes of a cohort of patients with Candida induced septic shock.</fo:block>
+                    </fo:block>
+                    <fo:block space-before="12pt">
+                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="12pt" line-height="14pt">Methods</fo:block>
+                        <fo:block space-before="4pt">Retrospective analysis of individuals who had at least one positive blood culture for Candida species ? 48 h after ICU admission. Data from patients that developed septic shock within 48 hr of the positive blood culture were compared to non-shock candidemic patients. Patients with a concomitant bacteremia and/or endocarditis were excluded.</fo:block>
+                    </fo:block>
+                    <fo:block space-before="12pt">
+                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="12pt" line-height="14pt">Results</fo:block>
+                        <fo:block space-before="4pt">Fifteen patients with Candida induced septic shock were studied and compared to 35 candidemic patients without shock. Overall mortality was 76% (87 % among those who had shock). A high proportion of non-albicans Candida species causing fungemia (74%) was observed. All patients with shock were receiving antibiotics but not antifungal treatment at the time of shock development, eight were on parenteral nutrition, six on steroids and nine had a cancer history. High dose fluconazole was the most common initial treatment provided. Four patients died before receiving any antifungal treatment. Time in ICU before the development of candidemia was identified as a predictor of shock development (higher chance if fungemia developed &lt; 7 days after ICU admission).</fo:block>
+                    </fo:block>
+                    <fo:block space-before="12pt">
+                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="12pt" line-height="14pt">Conclusions</fo:block>
+                        <fo:block space-before="4pt">Septic shock due to invasive candidiasis is a near fatal condition. No conventional risk factors were identified to predict shock development other than time (shorter) spent in ICU before the development of candidemia. We encourage clinicians to consider the initiation of appropriate empiric antifungal treatment in high-risk patients who develop septic shock while on antimicrobial treatment.</fo:block>
+                    </fo:block>
+                    <fo:block space-before="12pt">
+                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="12pt" line-height="14pt">Keywords</fo:block>
+                        <fo:block space-before="4pt">Septic shock; Candidemia; Outcome; Predictor</fo:block>
+                    </fo:block>
+                </fo:block>
+                <fo:block space-before="8pt" space-after="8pt" border-bottom-style="solid" border-bottom-width="0.5pt"/>
+                <fo:block margin-left="5pc" font-size="10pt" line-height="12pt" text-align="start" font-style="normal" font-weight="normal">
+                    <fo:block space-before="12pt">
+                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="16pt" line-height="18pt">Introduction</fo:block>
+                        <fo:block space-before="4pt">Candida is an increasing cause of bloodstream infection, causing significant mortality and morbidity. Its overall incidence rose fivefold in the past ten years and remains the fourth leading cause of nosocomial bloodstream infection in the United States, accounting for 8% of all bloodstream infections acquired in hospitals[
+                            <fo:inline>1-3</fo:inline>]. Furthermore, a change in the epidemiology has also been noted. Species other than C albicans have increased and surpassed C albicans in incidence in some tertiary care centers[
+                            <fo:inline>4-7</fo:inline>]. Some of these emerging species have been correlated with increased virulence[
+                            <fo:inline>8</fo:inline>], and in some reports with increased mortality[
+                            <fo:inline>9</fo:inline>]. Despite the availability of effective antifungal therapy, crude mortality in the last decade has remained high, ranging from 36 to 90%[
+                            <fo:inline>9-11</fo:inline>].
+                        </fo:block>
+                        <fo:block space-before="4pt">A number of predisposing factors have been associated with development of invasive candidiasis and clinical predictors of poor outcome reported[
+                            <fo:inline>12-14</fo:inline>]. Nevertheless, studies describing the clinical course of patients developing candidemia are scant[
+                            <fo:inline>15</fo:inline>], and limited data exist of the outcomes of patients who develop septic shock due to invasive candidiasis[
+                            <fo:inline>16</fo:inline>]. In general, when patients develop septic shock, bacterial causes are exclusively considered and no effort to empirically treat Candida species is made.
+                        </fo:block>
+                        <fo:block space-before="4pt">The present report describes a cohort of patients with Candida induced septic shock. In order to identify predictors of shock development, data obtained from patients in shock were compared to a group of patients who had ICU acquired candidemia without shock.</fo:block>
+                    </fo:block>
+                    <fo:block space-before="12pt">
+                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="16pt" line-height="18pt">Materials and Methods</fo:block>
+                        <fo:block space-before="4pt">The Human Investigation Committee (HIC) of Wayne State University approved the study protocol. The medical records of patients who had at least one positive blood culture specimen of Candida spp. collected after their ICU admission at Harper University Hospital over a five year span (1998 - 2003) were reviewed. Case patients were defined as individuals who had at least one positive blood culture for Candida species grown ? 48 h after ICU admission and in whom septic shock developed within 48 hrs of a positive blood culture. Patients who had a blood culture positive for a concomitant bacterial pathogen (i.e., mixed infection) and patients with endocarditis were excluded.</fo:block>
+                        <fo:block space-before="12pt">
+                            <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="14pt" line-height="16pt">Definitions</fo:block>
+                            <fo:block space-before="4pt">Septic shock: acute circulatory failure characterized by persistent arterial hypotension (systolic arterial pressure below 90 mm Hg, a MAP &lt; 60 mm Hg, or a reduction in systolic blood pressure of &gt; 40 mm Hg from baseline, despite adequate volume resuscitation, or the need for vasopressors in the absence of other causes for hypotension) in the presence of candidemia[
+                                <fo:inline>17</fo:inline>]. ICU acquired candidemia: Positive blood culture for Candida spp. grown ? 48 hrs after ICU admission. Colonization was defined as presence of Candida spp. in a non-sterile site. Candiduria as the presence of ? 104 cfu/mL of Candida spp. in urine. Airway colonization: Candida spp. isolated from tracheal aspirates or bronchoalveolar lavage specimens. Catheter-associated candidemia was determined as ?15 cfu of Candida spp. isolated from a central venous catheter tip.
+                            </fo:block>
+                        </fo:block>
+                        <fo:block space-before="12pt">
+                            <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="14pt" line-height="16pt">Study variables</fo:block>
+                            <fo:block space-before="4pt">Study population characteristics and data extracted included demographics, age, and sex of the patients, reason for ICU admission, APACHE (Acute Physiology and Chronic Health Evaluation) II score at admission, length of stay (LOS) in ICU, hospital LOS, LOS prior to ICU admission, time in ICU before development of candidemia, predisposing risk factors for candidemia such as diabetes mellitus, broad spectrum antibiotic treatment (for &gt; 3 days) during the hospital stay, chronic renal failure, liver disease, Candida colonization, systematic administration of glucocorticosteroids for any reason in the last 30 days before ICU admission (regardless of dose), total parenteral nutrition administration, central venous catheter (CVC) placement (for &gt; 2 days), the day of candidemia occurrence, and outcome (i.e., dead or alive at ICU discharge).</fo:block>
+                        </fo:block>
+                        <fo:block space-before="12pt">
+                            <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="14pt" line-height="16pt">Statistical analysis</fo:block>
+                            <fo:block space-before="4pt">The [chi]2 test or Fisher’s exact test was used to evaluate categorical variables and the Student’s t-test to evaluate continuous variables. Multiple logistic regression analysis was performed to identify independent variables associated with development of shock. Potential risk factors were included in the analysis if they were associated with the dependent variables in the univariate analyses at a statistical level P &lt; 0.2. A P &lt; 0.05 was considered statistically significant in the multivariable models to show association between various potential risk factors and the dependent variable. An empirical receiver operating curve (ROC) was created for each predictor. Also, sensitivity and specificity for each predictor were calculated. The optimal threshold was chosen in such a way that the threshold made the resulting binary prediction as close to the perfect operating point as possible. The Euclidean method was used to measure the distance between an observed point on the ROC curve and the perfect point.</fo:block>
+                        </fo:block>
+                    </fo:block>
+                    <fo:block space-before="12pt">
+                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="16pt" line-height="18pt">Results</fo:block>
+                        <fo:block space-before="4pt">Fifteen patients with Candida induced septic shock were identified and included in the study. Data obtained from this group was then compared to thirty-five patients with ICU acquired candidemia who did not develop shock(
+                            <fo:inline>Fig. 1</fo:inline>). The main characteristics of patients who developed shock are shown in Table 1
+                            <fo:inline>Table 1</fo:inline>. Patients with shock had higher illness acuity, most had a history of cancer (60%) and four were neutropenic at the time of ICU admission. Candidemia in patients with shock developed 5.5 ± 3.8 days after ICU admission; only three patients had a positive blood culture within 48 hrs of ICU admission. Mortality among patients with Candida induced septic shock was 87%. All patients were receiving antibiotic treatment (mean number of antibiotic agents 4.1 ± 1.7) for 4.2 ± 3.9 days prior to the development of candidemia. Six (40%) patients were on corticosteroids (mean duration of treatment prior to candidemia 4.9 ± 2.6 days) and eight (53%) were on parenteral alimentation at the time of development of candidemia. All patients had at least one CVC in place. Ten patients were initially treated with high dose fluconazole (? 12 mg/kg/day), one with amphotericin B, and four patients died before they received any antifungal treatment (culture results positive post mortem). Eight of the eleven treated patients cleared the fungemia after 7.4 ± 7.9 days of antifungal treatment, and 3 patients had persistent candidemia. Antifungal therapy was subsequently changed in 6 patients (five placed on deoxycholate amphotericin B and 1 on voriconazole).
+                        </fo:block>
+                        <fo:float float="before" margin-bottom="4pt">
+                            <fo:block-container border="thin solid black" padding="4pt" space-before="4pt" space-after="4pt">
+                                <fo:wrapper start-indent="0pc">
+                                    <fo:block keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">Fig. 1</fo:block>
+                                    <fo:block>
+                                        <fo:block space-before="4pt">Flowchart of study subjects. </fo:block>
+                                    </fo:block>
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block line-stacking-strategy="max-height">
+                                                <fo:external-graphic src="url('file:/D:/Elmer_Software/jocmr-03-65-g001.tif')" content-width="scale-down-to-fit" scaling="uniform" width="100%"/>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:wrapper>
+                            </fo:block-container>
+                        </fo:float>
+                        <fo:float float="before" margin-bottom="4pt">
+                            <fo:block-container border="thin solid black" padding="4pt" space-before="4pt" space-after="4pt">
+                                <fo:wrapper start-indent="0pc" id="T1">
+                                    <fo:block keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">Table 1</fo:block>
+                                    <fo:block>
+                                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="12pt" line-height="14pt">Patients With Candidemia Associated Septic Shock: Characteristics and Outcome </fo:block>
+                                    </fo:block>
+                                    <fo:table-and-caption display-align="center">
+                                        <fo:table border-collapse="collapse" border-spacing="2px" border="1px" border-style="outset hidden" role="table">
+                                            <fo:table-header start-indent="0pt" end-indent="0pt" text-indent="0pt" last-line-end-indent="0pt" text-align="start" text-align-last="relative" border="1px solid" role="thead">
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="2" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">Age</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="2" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">Sex</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="2" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">ICU admission diagnosis</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="2" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">Candida spp.</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="5" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">Predisposing factors for candidiasis</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="2" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">Outcome</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">Cancer</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">PN</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">CRF</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">DM</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">Liver Ds</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                            </fo:table-header>
+                                            <fo:table-body start-indent="0pt" end-indent="0pt" text-indent="0pt" last-line-end-indent="0pt" text-align="start" text-align-last="relative" border="1px solid" role="tbody">
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>50.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Male</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Septic shock</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Albicans</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>71.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Female</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Post cecal mass resection</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Albicans</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>84.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Male</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Post exploratory laparotomy for colonic perforation</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Albicans</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>83.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Female</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Septic shock</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Albicans</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>59.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Male</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Gastrointestinal bleeding (admitted to the hospital with urosepsis)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Albicans</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>63.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Male</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Aspiration pneumonia</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Glabrata</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>D/C LTACH</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>54.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Female</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Post clipping of cerebral aneurysm</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Glabrata</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>D/C Rehab</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>77.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Male</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Respiratory failure-pneumonia</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Glabrata</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>74.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Male</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Gastrointestinal bleeding</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Glabrata</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>50.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Female</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Endobronchial radiation treatment</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Glabrata</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>56.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Female</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Post exploratory laparotomy (colon and stomach resection)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Glabrata</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>40.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Female</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Sepsis - neutropenia</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Lusitaniae</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>64.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Male</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Septic shock</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Albicans</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>57.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Male</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Respiratory failure post peripheral stem cell transplant</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Glabrata</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>51.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Female</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Neutropenic fever and septic shock</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Glabrata</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Yes</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>---</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Deceased</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                            </fo:table-body>
+                                        </fo:table>
+                                    </fo:table-and-caption>
+                                    <fo:block>
+                                        <fo:block>
+                                            <fo:block space-before="4pt" id="d7e606">CRF: chronic renal failure; DM: diabetes mellitus; PN: parenteral nutrition; Liver Ds: liver disease; D/C: discharged; LTACH: long term acute care hospital</fo:block>
+                                        </fo:block>
+                                    </fo:block>
+                                </fo:wrapper>
+                            </fo:block-container>
+                        </fo:float>
+                        <fo:block space-before="4pt">Table 2
+                            <fo:inline>Table 2</fo:inline> shows data for the whole cohort and compares candidemic patients with and without shock. Overall mortality was very high (76%). Patients in shock had a higher illness acuity and higher mortality. ICU stay prior to the development of candidemia was shorter in patients who developed shock and so was their overall hospital LOS (presumably because these patients died more rapidly). Duration of candidemia was identical in both candidemia groups. Although there were proportionally more patients with Candida albicans who developed shock, no significant statistical difference in species was noted between the two groups. Four patients in the shock group (27%) had documented Candida colonization (three patients had combined urine and sputum, one patient had only sputum colonization), whereas eighteen patients (51%) in the no-shock group were colonized (eight patients urine, 10 sputum and 5 patients catheter-related). The difference did not reach statistical significance (P = 0.135).
+                        </fo:block>
+                        <fo:float float="before" margin-bottom="4pt">
+                            <fo:block-container border="thin solid black" padding="4pt" space-before="4pt" space-after="4pt">
+                                <fo:wrapper start-indent="0pc" id="T2">
+                                    <fo:block keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">Table 2</fo:block>
+                                    <fo:block>
+                                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="12pt" line-height="14pt">Patient Age, Acuity, Outcomes and Lengths of Stay </fo:block>
+                                    </fo:block>
+                                    <fo:table-and-caption display-align="center">
+                                        <fo:table border-collapse="collapse" border-spacing="2px" border="1px" border-style="outset hidden" role="table">
+                                            <fo:table-header start-indent="0pt" end-indent="0pt" text-indent="0pt" last-line-end-indent="0pt" text-align="start" text-align-last="relative" border="1px solid" role="thead">
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">All Candidemias</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">No shock</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">Shock</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="2" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">P Value</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">(n = 50)</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">(n = 35)</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">(n = 15)</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                            </fo:table-header>
+                                            <fo:table-body start-indent="0pt" end-indent="0pt" text-indent="0pt" last-line-end-indent="0pt" text-align="start" text-align-last="relative" border="1px solid" role="tbody">
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Age (years)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>61 ± 14</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>60 ± 14</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>62 ± 13</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.64</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Apache II</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>22.6 ± 8.3</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>21.1 ± 7.2</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>26.5 ± 9.7</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.04</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Mortality (%)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>76.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>71.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>87.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.3</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Hospital LOS (days)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>35.6 ± 19.8</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>40.1 ± 19.1</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>25.1 ± 17.9</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.01</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>ICU LOS (days)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>22.0 ± 16.0</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>24.0 ± 16.5</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>17.4 ± 14.3</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.18</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Hospital LOS prior to ICU (days)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>7.9 ± 10.5</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>9.3 ± 11.5</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>4.4 ± 6.7</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.13</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Time in ICU prior to candidemia</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>13.5 ± 13.2</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>16.9 ± 14.4</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>5.5 ± 3.8</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.0040</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Documented colonization (patients)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>22 (44%)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>18 (51%)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>4 (27%)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.13</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Candida spp. patients (%)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block/>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block/>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block/>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block/>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Albicans</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>14 (26%)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>8 (23%)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>6 (40%)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="2" role="td" text-align="left">
+                                                        <fo:block>0.3</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Non-albicans</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>36 (74%)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>27 (77%)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>9 (60%)</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Time to clearance (days)</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>8.6 ± 8.3</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>7.4 ± 7.9</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>9.0 ± 8.6</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.64</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                            </fo:table-body>
+                                        </fo:table>
+                                    </fo:table-and-caption>
+                                    <fo:block>
+                                        <fo:block>
+                                            <fo:block space-before="4pt" id="d7e788">LOS: Length of stay</fo:block>
+                                        </fo:block>
+                                    </fo:block>
+                                </fo:wrapper>
+                            </fo:block-container>
+                        </fo:float>
+                        <fo:block space-before="4pt">Table 3
+                            <fo:inline>Table 3</fo:inline> shows odd ratios and confidence intervals for shock development for the parameters identified by univariate analysis. Time in ICU before the development of candidemia reached significance as predictor of shock development. Area under the receiver operating curve was 0.826(
+                            <fo:inline>Fig. 2</fo:inline>). The threshold of &lt; 7.2 days in ICU before the development of candidemia allowed a discrimination between shock development and no shock with a sensitivity of 73.3% and a specificity of 80.0%. A trend was also noted for hospital and ICU LOS prior to development of candidemia, the lack of statistical significance may be related to the limited sample size. Judging by the values of the Hosmer-Lemeshow and the likelihood ratio statistic, the model appears well calibrated.
+                        </fo:block>
+                        <fo:float float="before" margin-bottom="4pt">
+                            <fo:block-container border="thin solid black" padding="4pt" space-before="4pt" space-after="4pt">
+                                <fo:wrapper start-indent="0pc" id="T3">
+                                    <fo:block keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">Table 3</fo:block>
+                                    <fo:block>
+                                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="12pt" line-height="14pt">Multiple Logistic Regression Analysis </fo:block>
+                                    </fo:block>
+                                    <fo:table-and-caption display-align="center">
+                                        <fo:table border-collapse="collapse" border-spacing="2px" border="1px" border-style="outset hidden" role="table">
+                                            <fo:table-header start-indent="0pt" end-indent="0pt" text-indent="0pt" last-line-end-indent="0pt" text-align="start" text-align-last="relative" border="1px solid" role="thead">
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold"/>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">Odds ratio</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">95% CI</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>
+                                                            <fo:inline font-weight="bold">P Value</fo:inline>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                            </fo:table-header>
+                                            <fo:table-body start-indent="0pt" end-indent="0pt" text-indent="0pt" last-line-end-indent="0pt" text-align="start" text-align-last="relative" border="1px solid" role="tbody">
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>APACHE II score</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>1.007</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.882 - 1.149</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.919</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Hospital LOS</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.902</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.805 - 1.010</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.075</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>ICU LOS</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>1.119</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.988 - 1.267</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.076</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Hospital LOS before ICU</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.965</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.819 - 1.138</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.675</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>ICU LOS prior to candidemia</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.714</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.531 - 0.960</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.026</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                                <fo:table-row role="tr">
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>Candida colonization</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.291</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.037 - 2.258</fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell border="1px" padding="1px" number-columns-spanned="1" number-rows-spanned="1" role="td" text-align="left">
+                                                        <fo:block>0.237</fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                            </fo:table-body>
+                                        </fo:table>
+                                    </fo:table-and-caption>
+                                    <fo:block>
+                                        <fo:block>
+                                            <fo:block space-before="4pt" id="d7e883">Hosmer-Lemeshow statistic: 3.175 (P = 0.923); Likelihood ratio test statistic: 28.474 (P ? 0.001)ICU: Intensive care unit; APACHE: Acute Physiology and Chronic Health Evaluation; LOS: Length of stay</fo:block>
+                                        </fo:block>
+                                    </fo:block>
+                                </fo:wrapper>
+                            </fo:block-container>
+                        </fo:float>
+                        <fo:float float="before" margin-bottom="4pt">
+                            <fo:block-container border="thin solid black" padding="4pt" space-before="4pt" space-after="4pt">
+                                <fo:wrapper start-indent="0pc">
+                                    <fo:block keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">Fig. 2</fo:block>
+                                    <fo:block>
+                                        <fo:block space-before="4pt">Receiver operator curves for the three predictors with statistical significance. Closed circles: ROC for time in ICU prior to candidemia; Open circles: ROC for ICU length of stay (LOS); Open diamonds: ROC for hospital LOS. </fo:block>
+                                    </fo:block>
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block line-stacking-strategy="max-height">
+                                                <fo:external-graphic src="url('file:/D:/Elmer_Software/jocmr-03-65-g002.tif')" content-width="scale-down-to-fit" scaling="uniform" width="100%"/>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:wrapper>
+                            </fo:block-container>
+                        </fo:float>
+                    </fo:block>
+                    <fo:block space-before="12pt">
+                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="16pt" line-height="18pt">Discussion</fo:block>
+                        <fo:block space-before="4pt">The present study shows that Candida induced septic shock is a nearly fatal condition with mortality rate that triples that of bacterial septic shock. Estimation of the true incidence of Candida induced septic shock is not possible from this study, although the percentage of patients with shock i.e. 30% in our ICU cohort is similar to the 27% and 23% frequency previously reported[
+                            <fo:inline>15</fo:inline>,
+                            <fo:inline>18</fo:inline>]. The comparable rates strengthen the selection criteria employed to identify case patients in this retrospective cohort and highlight the high risk of progression to septic shock among critically ill patients who develop candidemia, a fact ignored by many clinicians.
+                        </fo:block>
+                        <fo:block space-before="4pt">The high mortality observed among ICU patients with candidemia has been attributed to a number of factors, including APACHE scores, inadequate initial fluconazole dosing, delayed administration of antifungal therapy due to slow fungal growth or insensitive culture methods, or retention of central venous catheters[
+                            <fo:inline>12</fo:inline>,
+                            <fo:inline>18</fo:inline>]. High dose fluconazole was the initial treatment in all but one patient. Although current treatment guidelines suggest use of echinocandin agents or polyenes in hemodynamically unstable patient[
+                            <fo:inline>19</fo:inline>], these recommendations were published after the study occurred (1988 - 2003) and before the availability of echinocandins. It remains speculative whether the outcomes observed in this cohort have any relationship to the treatment provided. Nevertheless, it is still feasible that the high mortality observed was a consequence of using a fungistatic agent such as fluconazole rather than fungicidal echinocandin or polyene agents. A more likely explanation is the time that our patients were without antifungal treatment awaiting blood cultures to turn positive. This emphasizes the need to introduce sensitive diagnostic assays that facilitate earlier pathogen identification. Supporting this concept is the fact that almost a third of our patients died before isolating the organism responsible for septic shock and therefore did not receive antifungal treatment. All patients were being treated with multiple antibiotic agents at the time of shock development, begging the question whether clinicians should consider empiric antifungal therapy in patients who develop shock while receiving broad spectrum antimicrobial agents.
+                        </fo:block>
+                        <fo:block space-before="4pt">Although a number of studies have described risk factors for development of candidemia, none have specifically identified factors predisposing to development of shock[
+                            <fo:inline>13</fo:inline>,
+                            <fo:inline>14</fo:inline>,
+                            <fo:inline>20</fo:inline>,
+                            <fo:inline>21</fo:inline>]. Using a multiple regression analysis we were able to identify the time spent in ICU until the development of candidemia as the only parameter that reached statistical significance as shock predictor. ROC analysis suggests using a threshold of 7 days in the unit as the best way to identify who may develop shock due to candidemia. While this may be an important first step alerting clinicians that there may be a higher chance for shock development in patients who develop candidemia early on the course of ICU stay, we realize that the limited sample size precludes developing a more powerful model for better prediction of shock.
+                        </fo:block>
+                        <fo:block space-before="4pt">While not statistically significant, proportionally more patients with C albicans developed shock. This observation was previously reported by Hadley et al, where 7 out of 10 described episodes of candidemia and shock were caused by C. albicans[
+                            <fo:inline>16</fo:inline>]. Although it is tempting to postulate that inherent properties of each species would induce varying degrees of inflammatory response and thus explain the higher incidence of shock observed by C. albicans, this hypothesis was not supported by Wisplinghoff et al[
+                            <fo:inline>15</fo:inline>]. The authors reported similar initial and most severe inflammatory responses with both C albicans and non-albicans Candida spp. over time. The limited sample size precludes reaching any definitive conclusion, although these data may be hypothesis generating and lead to further investigation to determine whether different species trigger different host response. Although there has been a reported increase in the incidence of non-albicans Candida fungemia[
+                            <fo:inline>06</fo:inline>,
+                            <fo:inline>10</fo:inline>], the observed ratio of non-albicans to C. albicans in our cohort is extremely high. It remains unknown whether this is a reflection of antibiotic and antifungal use within our medical center, or a reflection of severity of disease in patients acquiring candidemia. Nonetheless, in selecting the initial early empiric antifungals one should recognize the high frequency of non-albicans Candida species with intrinsic reduced fluconazole susceptibility.
+                        </fo:block>
+                        <fo:block space-before="4pt">Our study has limitations. Because of its retrospective nature, the definition of shock induced by candidemia may be disputed, although we only included patients who had hypotension not explained by any other reason than infection and the percentage of patients progressing to shock is similar to previously described[
+                            <fo:inline>15</fo:inline>]. Similarly, colonization was not documented in all patients as it is not routine to do surveillance cultures for Candida in the US. The study period preceded the introduction of echinocandins into clinical use. In spite of these limitations, this is to our knowledge one of the largest cohorts of patients with Candida induced septic shock and the first that has attempted to identify predictors of shock development thus far.
+                        </fo:block>
+                        <fo:block space-before="4pt">In summary, septic shock due to candidemia in the ICU setting is associated with extremely high mortality. No conventional risk factors were identified to predict shock development other than the time spent in ICU until the development of candidemia. Given the high mortality associated with candidemic septic shock, consideration should be given for initiating empiric broad spectrum cidal antifungal therapy in high risk ICU patients already receiving and not responding to antibiotic therapy. This therapeutic approach should be validated by prospective studies.</fo:block>
+                    </fo:block>
+                </fo:block>
+                <fo:block margin-left="0em" font-size="10pt" line-height="12pt" text-align="start" font-style="normal" font-weight="normal">
+                    <fo:block space-before="12pt" id="d7e950">
+                        <fo:block start-indent="0pc" font-family="sans-serif" font-weight="bold" keep-with-next.within-page="always" font-size="16pt" line-height="18pt">References</fo:block>
+                        <fo:list-block space-before="6pt" space-after="6pt" provisional-distance-between-starts="2pc" provisional-label-separation="6pt">
+                            <fo:list-item space-before="4pt" id="R01">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>1</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Edmond, MB, Wallace, SE, McClish, DK, Pfaller, MA, Jones, RN,  &amp; Wenzel, RP. (1999). Nosocomial bloodstream infections in United States hospitals: a three-year analysis.
+                                                    <fo:inline font-style="italic">Clin Infect Dis</fo:inline>, 29(2), 239-244, pubmed id:10476719.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R02">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>2</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Pfaller, MA, Diekema, DJ, Jones, RN, Sader, HS, Fluit, AC, Hollis, RJ,  &amp; Messer, SA. (2001). International surveillance of bloodstream infections due to Candida species: frequency of occurrence and in vitro susceptibilities to fluconazole, ravuconazole, and voriconazole of isolates collected from 1997 through 1999 in the SENTRY antimicrobial surveillance program.
+                                                    <fo:inline font-style="italic">J Clin Microbiol</fo:inline>, 39(9), 3254-3259, pubmed id:11526159.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R03">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>3</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Marchetti, O, Bille, J, Fluckiger, U, Eggimann, P, Ruef, C, Garbino, J, Calandra, T, et al. (2004). Epidemiology of candidemia in Swiss tertiary care hospitals: secular trends, 1991-2000.
+                                                    <fo:inline font-style="italic">Clin Infect Dis</fo:inline>, 38(3), 311-320, pubmed id:14727199.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R04">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>4</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Nguyen, MH, Peacock, JE,  &amp; Jr, . (1996). , Morris AJ, Tanner DC, Nguyen ML, Snydman DR, Wagener MM, et al. The changing face of candidemia: emergence of non-Candida albicans species and antifungal resistance.
+                                                    <fo:inline font-style="italic">Am J Med</fo:inline>, 100(6), 617-623, pubmed id:8678081.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R05">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>5</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Eggimann, P, Garbino, J,  &amp; Pittet, D. (2003). Epidemiology of Candida species infections in critically ill non-immunosuppressed patients.
+                                                    <fo:inline font-style="italic">Lancet Infect Dis</fo:inline>, 3(11), 685-702, pubmed id:14592598.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R06">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>6</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Bassetti, M, Righi, E, Costa, A, Fasce, R, Molinari, MP, Rosso, R, Pallavicini, FB, et al. (2006). Epidemiological trends in nosocomial candidemia in intensive care.
+                                                    <fo:inline font-style="italic">BMC Infect Dis</fo:inline>, 6, pubmed id:16472387.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R07">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>7</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Voss, A, le, Noble, Verduyn, Lunel, Foudraine, NA,  &amp; Meis, JF. (1997). Candidemia in intensive care unit patients: risk factors for mortality.
+                                                    <fo:inline font-style="italic">Infection</fo:inline>, 25(1), 8-11, pubmed id:9039530.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R08">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>8</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Komshian, SV, Uwaydah, AK, Sobel, JD,  &amp; Crane, LR. (1989). Fungemia caused by Candida species and Torulopsis glabrata in the hospitalized patient: frequency, characteristics, and evaluation of factors influencing outcome.
+                                                    <fo:inline font-style="italic">Rev Infect Dis</fo:inline>, 11(3), 379-390, pubmed id:2749102.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R09">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>9</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Dimopoulos, G, Ntziora, F, Rachiotis, G, Armaganidis, A,  &amp; Falagas, ME. (2008). Candida albicans versus non-albicans intensive care unit-acquired bloodstream infections: differences in risk factors and outcome.
+                                                    <fo:inline font-style="italic">Anesth Analg</fo:inline>, 106(2), 523-529, pubmed id:18227310.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R10">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>10</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Blot, S, Vandewoude, K, Hoste, E, Poelaert, J,  &amp; Colardyn, F. (2001). Outcome in critically ill patients with candidal fungaemia: Candida albicans vs. Candida glabrata.
+                                                    <fo:inline font-style="italic">J Hosp Infect</fo:inline>, 47(4), 308-313, pubmed id:11289775.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R11">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>11</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Gudlaugsson, O, Gillespie, S, Lee, K, Vande, Berg, Hu, J, Messer, S, Herwaldt, L, et al. (2003). Attributable mortality of nosocomial candidemia, revisited.
+                                                    <fo:inline font-style="italic">Clin Infect Dis</fo:inline>, 37(9), 1172-1177, pubmed id:14557960.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R12">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>12</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Labelle, AJ, Micek, ST, Roubinian, N,  &amp; Kollef, MH. (2008). Treatment-related risk factors for hospital mortality in Candida bloodstream infections.
+                                                    <fo:inline font-style="italic">Crit Care Med</fo:inline>, 36(11), 2967-2972, pubmed id:18824910.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R13">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>13</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Leon, C, Ruiz-Santana, S, Saavedra, P, Almirante, B, Nolla-Salas, J, Alvarez-Lerma, F, Garnacho-Montero, J, et al. (2006). A bedside scoring system ("Candida score") for early antifungal treatment in nonneutropenic critically ill patients with Candida colonization.
+                                                    <fo:inline font-style="italic">Crit Care Med</fo:inline>, 34(3), 730-737, pubmed id:16505659.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R14">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>14</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Wenzel, RP,  &amp; Gennings, C. (2005). Bloodstream infections due to Candida species in the intensive care unit: identifying especially high-risk patients to determine prevention strategies.
+                                                    <fo:inline font-style="italic">Clin Infect Dis</fo:inline>, 41, 389-393, pubmed id:16108005.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R15">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>15</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Wisplinghoff, H, Seifert, H, Wenzel, RP,  &amp; Edmond, MB. (2006). Inflammatory response and clinical course of adult patients with nosocomial bloodstream infections caused by Candida spp.
+                                                    <fo:inline font-style="italic">Clin Microbiol Infect</fo:inline>, 12(2), 170-177, pubmed id:16441456.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R16">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>16</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Hadley, S, Lee, WW, Ruthazer, R, Nasraway, SA,  &amp; Jr, . (2002). Candidemia as a cause of septic shock and multiple organ failure in nonimmunocompromised patients.
+                                                    <fo:inline font-style="italic">Crit Care Med</fo:inline>, 30(8), 1808-1814, pubmed id:12163798.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R17">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>17</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Levy, MM, Fink, MP, Marshall, JC, Abraham, E, Angus, D, Cook, D, Cohen, J, et al. (2003). 2001 SCCM/ESICM/ACCP/ATS/SIS International Sepsis Definitions Conference.
+                                                    <fo:inline font-style="italic">Crit Care Med</fo:inline>, 31(4), 1250-1256, pubmed id:12682500.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R18">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>18</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Patel, GP, Simon, D, Scheetz, M, Crank, CW, Lodise, T,  &amp; Patel, N. (2009). The effect of time to antifungal therapy on mortality in Candidemia associated septic shock.
+                                                    <fo:inline font-style="italic">Am J Ther</fo:inline>, 16(6), 508-511, pubmed id:19531934.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R19">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>19</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Pappas, PG, Kauffman, CA, Andes, D, Benjamin, DK,  &amp; Jr, . (2009). , Calandra TF, Edwards JE, Jr., Filler SG, et al. Clinical practice guidelines for the management of candidiasis: 2009 update by the Infectious Diseases Society of America.
+                                                    <fo:inline font-style="italic">Clin Infect Dis</fo:inline>, 48(5), 503-535, pubmed id:19191635.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R20">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>20</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Paphitou, NI, Ostrosky-Zeichner, L,  &amp; Rex, JH. (2005). Rules for identifying patients at increased risk for candidal infections in the surgical intensive care unit: approach to developing practical criteria for systematic use in antifungal prophylaxis trials.
+                                                    <fo:inline font-style="italic">Med Mycol</fo:inline>, 43(3), 235-243, pubmed id:16010850.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                            <fo:list-item space-before="4pt" id="R21">
+                                <fo:list-item-label end-indent="label-end()">
+                                    <fo:block text-align="left" font-weight="bold">
+                                        <fo:inline keep-with-next.within-page="always" font-family="sans-serif" font-size="9pt" font-weight="bold">
+                                            <fo:inline>21</fo:inline>
+                                        </fo:inline>
+                                    </fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body start-indent="body-start()">
+                                    <fo:block-container>
+                                        <fo:wrapper start-indent="0pc">
+                                            <fo:block>
+                                                <fo:block space-before="4pt" start-indent="1pc" text-indent="-1pc">Ostrosky-Zeichner, L, Sable, C, Sobel, J, Alexander, BD, Donowitz, G, Kan, V, Kauffman, CA, et al. (2007). Multicenter retrospective development and validation of a clinical prediction rule for nosocomial invasive candidiasis in the intensive care setting.
+                                                    <fo:inline font-style="italic">Eur J Clin Microbiol Infect Dis</fo:inline>, 26(4), 271-276, pubmed id:17333081.
+                                                </fo:block>
+                                            </fo:block>
+                                        </fo:wrapper>
+                                    </fo:block-container>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                        </fo:list-block>
+                    </fo:block>
+                </fo:block>
+            </fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>
