@@ -231,8 +231,9 @@ public class Main {
             db = dbf.newDocumentBuilder();
 
         } catch (ParserConfigurationException ex) {
+        	ex.printStackTrace();
 
-            ta.append("\nerrors happen:\n");
+            ta.append("\nerrors happen:\n"+ex.getMessage());
             ta.append(ex.getMessage() + "\n");
 
         }
@@ -285,8 +286,9 @@ public class Main {
             transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "journalpublishing3.dtd");
 
         } catch (TransformerConfigurationException ex) {
+        	ex.printStackTrace();
 
-            ta.append("\nerrors happen:\n");
+            ta.append("\nerrors happen:\n"+ex.getMessage());
             ta.append(ex.getMessage() + "\n");
 
         }
@@ -305,8 +307,9 @@ public class Main {
             transformer.transform(domSource, sr);
 
         } catch (TransformerException ex) {
+        	ex.printStackTrace();
 
-            ta.append("\nerrors happen:\n");
+            ta.append("\nerrors happen:\n"+ex.getMessage());
             ta.append(ex.getMessage() + "\n");
 
         }
@@ -1417,7 +1420,8 @@ public class Main {
             try {
                 db = dbf.newDocumentBuilder();
             } catch (ParserConfigurationException ex) {
-                ta.append("\nerrors happen:\n");
+            	ex.printStackTrace();
+                ta.append("\nerrors happen:\n"+ex.getMessage());
                 ta.append(ex.getMessage() + "\n");
             }
             doc = db.newDocument();
@@ -1534,7 +1538,8 @@ public class Main {
                 // cellVectorHolder.addElement(cellStoreVector);
             }
         } catch (Exception e) {
-            ta.append("\nerrors happen:\n");
+        	e.printStackTrace();
+            ta.append("\nerrors happen:\n"+e.getMessage());
             ta.append(e.getMessage() + "\n");
         }
 
@@ -2031,9 +2036,13 @@ public class Main {
                             System.out.println("adding reference:" + refs.get(i));
                             String result = refs.get(i);
                             result += "httphttp";
-                            String secondString = refs.get(i+1);
+                            String secondString = "";
+                            if((i+1)<refs.size())
+                            	secondString = refs.get(i+1);
                             System.out.println("new string 1:"+secondString);
-                            String thirdString = refs.get(i+2);
+                            String thirdString = "";
+                            if((i+2)<refs.size())
+                                 thirdString = refs.get(i+2);
                             System.out.println("new string 2:"+thirdString);
                             if(secondString!=null && (secondString.trim().startsWith("http://") || secondString.trim().startsWith("Http://")) ) {
                                 result += secondString.trim();
@@ -2071,8 +2080,9 @@ public class Main {
             } catch (Exception e) {
 
 // TODO Auto-generated catch block
+            	e.printStackTrace();
 
-                ta.append("\nerrors happen:\n");
+                ta.append("\nerrors happen:\n"+e.getMessage());
                 ta.append(e.getMessage() + "\n");
 
             }
