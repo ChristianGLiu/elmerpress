@@ -106,37 +106,41 @@ public class RefSouceOnlyMain {
 
     public static void cleanArrs() {
 
+    	if(ta!=null) {
         ta.setText("");
+        ta.append("cleaning arrays \n");}
 
         isValidBoday = false;
         isValidBack = false;
         isValidRefs = false;
 
-        ta.append("cleaning arrays \n");
-
-        refs.clear();
-
-        figAlready.clear();
-
-        abstractArr.clear();
         
+    if(refs!=null)
+        refs.clear();
+if(figAlready!=null)
+        figAlready.clear();
+if(abstractArr!=null)
+        abstractArr.clear();
+        if(keywordArr!=null)
         keywordArr.clear();
 
-
+if(discussion!=null)
         discussion.clear();
 
-
+if(acknowledgement!=null)
         acknowledgement.clear();
-
+if(disclosure!=null)
         disclosure.clear();
-
+if(table!=null)
         table.clear();
-
+if(figure!=null)
         figure.clear();
-
+if(authors!=null)
         authors.clear();
-
+if(references!=null)
         references.clear();
+        if(articleType!=null)
+        articleType.clear();
 
 
 
@@ -1107,7 +1111,7 @@ public class RefSouceOnlyMain {
 
 
 
-        license_p.appendChild(doc.createTextNode("This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited."));
+        license_p.appendChild(doc.createTextNode(Main.textNote));
 
 
 
@@ -1392,11 +1396,13 @@ public class RefSouceOnlyMain {
 
                 if (context.contains("Email:")) {
                     String[] aaa = context.split("Email:");
-                    e14.appendChild(doc.createTextNode(aaa[0] + " Email: "));
+                    e14.appendChild(doc.createTextNode(aaa[0].trim() + "Email: "));
                     Element e20 = doc.createElement("email");
                     e14.appendChild(e20);
+                    aaa[1]=aaa[1]==null?"":aaa[1].trim();
                     e20.appendChild(doc.createTextNode(aaa[1]));
                 } else {
+                	context=context==null?"":context.trim();
                     e14.appendChild(doc.createTextNode(context));
                 }
 
@@ -1556,7 +1562,7 @@ public class RefSouceOnlyMain {
 
 
             /** Read the content **/
-            readParagraphs(doc);
+            Main.readParagraphs(doc,RefSouceOnlyMain.ta,RefSouceOnlyMain.refs);
 
 
 
@@ -2105,42 +2111,6 @@ public class RefSouceOnlyMain {
 
     }
 
-    public static void readParagraphs(HWPFDocument doc) throws Exception {
-
-        WordExtractor we = new WordExtractor(doc);
-
-
-
-        /**Get the total number of paragraphs**/
-        String[] paragraphs = we.getParagraphText();
-
-        ta.append("\n" + "Total Paragraphs: " + paragraphs.length);
-
-
-
-        for (int i = 0; i < paragraphs.length; i++) {
-
-
-
-            ta.append("\n" + "Length of paragraph " + (i + 1) + ": " + paragraphs[i].toString());
-
-
-
-            if (paragraphs[i].toString() != null && paragraphs[i].toString().trim().length() > 1) {
-                String temp = paragraphs[i].toString().trim();
-
-                refs.add(temp);
-
-            }
-
-
-
-
-        }
-
-
-
-    }
 
     public static void readHeader(HWPFDocument doc, int pageNumber) {
 
@@ -2199,42 +2169,7 @@ public class RefSouceOnlyMain {
     }
     public final static String prefixFileName = "c:\\";
 
-    public static String fixEncoding(String queryString) {
-        String result = "";
-
-
-
-
-        //System.out.println("");
-
-        UnicodeBlock myBlock = null;
-
-        for (int i = 0; i < queryString.length(); i++) {
-            char theChar = queryString.charAt(i);
-            byte bValue = (byte) theChar;
-            // System.out.println("[" + i + " => '" + (char) data[i]
-            //     + "'] Is defined: "
-            //     + Character.isDefined(new Byte(data[i]).intValue()));
-            try {
-                myBlock = Character.UnicodeBlock.of(new Byte(bValue).intValue());
-                result += theChar;
-            } catch (IllegalArgumentException e) {
-                int aaa = (int) theChar;
-                ta.append("ERROR HAPPENING: found ilegal char at index " + i + " : "
-                        + theChar + "\n");
-                RefSouceOnlyMain.error("ERROR HAPPENING: found ilegal char at index " + i + " : "
-                        + theChar + "\nPLESE verfiy it in generated XML file.\nSystem already automatically convert it into &#" + aaa + ";");
-                result = result + "&#" + aaa + ";";
-            }
-        }
-
-        ta.append("Finished");
-        return result;
-
-
-
-    }
-
+   
     private static void replaceChar(String[] aaa) {
     }
 
@@ -2260,11 +2195,7 @@ public class RefSouceOnlyMain {
         theString = theString.replaceAll("‘", "&#8216;").replaceAll("’", "&#8217;").replaceAll("”", "&#8221;").replaceAll("“", "&#8220;").replaceAll("≥", "&#8805;").replaceAll("≤", "&#8804;").replace("•", "&#8226;");
 //theString = theString.replaceAll("‘","'").replaceAll("’","'").replaceAll("”", "\"").replaceAll("“", "\"");
         String[] aaaaa = theString.split("\n");
-        for (String aString : aaaaa) {
-            ta.append("\ndealing with string:" + aString);
-            aString = RefSouceOnlyMain.fixEncoding(aString);
-            output.write(aString);
-        }
+        Main.fixEncoding(aaaaa,RefSouceOnlyMain.ta,output);
 
         output.close();
 

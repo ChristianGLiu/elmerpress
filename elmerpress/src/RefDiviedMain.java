@@ -106,37 +106,41 @@ public class RefDiviedMain {
 
     public static void cleanArrs() {
 
+    	if(ta!=null) {
         ta.setText("");
+        ta.append("cleaning arrays \n");}
 
         isValidBoday = false;
         isValidBack = false;
         isValidRefs = false;
 
-        ta.append("cleaning arrays \n");
-
-        refs.clear();
-
-        figAlready.clear();
-
-        abstractArr.clear();
         
+    if(refs!=null)
+        refs.clear();
+if(figAlready!=null)
+        figAlready.clear();
+if(abstractArr!=null)
+        abstractArr.clear();
+        if(keywordArr!=null)
         keywordArr.clear();
 
-
+if(discussion!=null)
         discussion.clear();
 
-
+if(acknowledgement!=null)
         acknowledgement.clear();
-
+if(disclosure!=null)
         disclosure.clear();
-
+if(table!=null)
         table.clear();
-
+if(figure!=null)
         figure.clear();
-
+if(authors!=null)
         authors.clear();
-
+if(references!=null)
         references.clear();
+        if(articleType!=null)
+        articleType.clear();
 
 
 
@@ -1101,7 +1105,7 @@ public class RefDiviedMain {
 
 
 
-        license_p.appendChild(doc.createTextNode("This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited."));
+        license_p.appendChild(doc.createTextNode(Main.textNote));
 
 
 
@@ -1182,8 +1186,8 @@ public class RefDiviedMain {
 
 
 
-
-
+        ta.append("get author list:"+refs.size());
+        
         String[] authors = refs.get(1).split(",");
         
         List<String> authorsInitList = new ArrayList<String>();
@@ -1386,11 +1390,13 @@ public class RefDiviedMain {
 
                 if (context.contains("Email:")) {
                     String[] aaa = context.split("Email:");
-                    e14.appendChild(doc.createTextNode(aaa[0] + " Email: "));
+                    e14.appendChild(doc.createTextNode(aaa[0].trim() + "Email: "));
                     Element e20 = doc.createElement("email");
                     e14.appendChild(e20);
+                    aaa[1]=aaa[1]==null?"":aaa[1].trim();
                     e20.appendChild(doc.createTextNode(aaa[1]));
                 } else {
+                	context=context==null?"":context.trim();
                     e14.appendChild(doc.createTextNode(context));
                 }
 
@@ -1550,7 +1556,7 @@ public class RefDiviedMain {
 
 
             /** Read the content **/
-            readParagraphs(doc);
+            Main.readParagraphs(doc,RefDiviedMain.ta,RefDiviedMain.refs);
 
 
 
@@ -2103,42 +2109,6 @@ public class RefDiviedMain {
 
     }
 
-    public static void readParagraphs(HWPFDocument doc) throws Exception {
-
-        WordExtractor we = new WordExtractor(doc);
-
-
-
-        /**Get the total number of paragraphs**/
-        String[] paragraphs = we.getParagraphText();
-
-        ta.append("\n" + "Total Paragraphs: " + paragraphs.length);
-
-
-
-        for (int i = 0; i < paragraphs.length; i++) {
-
-
-
-            ta.append("\n" + "Length of paragraph " + (i + 1) + ": " + paragraphs[i].toString());
-
-
-
-            if (paragraphs[i].toString() != null && paragraphs[i].toString().trim().length() > 1) {
-                String temp = paragraphs[i].toString().trim();
-
-                refs.add(temp);
-
-            }
-
-
-
-
-        }
-
-
-
-    }
 
     public static void readHeader(HWPFDocument doc, int pageNumber) {
 
@@ -2200,7 +2170,7 @@ public class RefDiviedMain {
     public static String fixEncoding(String queryString) {
         String result = "";
 
-
+        String errorString = "";
 
 
         //System.out.println("");
@@ -2218,15 +2188,18 @@ public class RefDiviedMain {
                 result += theChar;
             } catch (IllegalArgumentException e) {
                 int aaa = (int) theChar;
-                ta.append("ERROR HAPPENING: found ilegal char at index " + i + " : "
-                        + theChar + "\n");
-                RefDiviedMain.error("ERROR HAPPENING: found ilegal char at index " + i + " : "
-                        + theChar + "\nPLESE verfiy it in generated XML file.\nSystem already automatically convert it into &#" + aaa + ";");
                 result = result + "&#" + aaa + ";";
+                errorString+="ERROR HAPPENING: found ilegal char at index " + i + " : "
+                        + theChar + "\nPLESE verfiy it in generated XML file.\nSystem already automatically convert it into &#" + aaa + ";\n";
             }
         }
 
-        ta.append("Finished");
+        if(!errorString.equals("")) {
+        	errorString = "special characters list:\n" + errorString + "Finished";
+        	ta.append(errorString);
+            RefSouceOnlyMain.error(errorString);
+            
+        }
         return result;
 
 
@@ -2258,12 +2231,7 @@ public class RefDiviedMain {
         theString = theString.replaceAll("‘", "&#8216;").replaceAll("’", "&#8217;").replaceAll("”", "&#8221;").replaceAll("“", "&#8220;").replaceAll("≥", "&#8805;").replaceAll("≤", "&#8804;").replace("•", "&#8226;");
 //theString = theString.replaceAll("‘","'").replaceAll("’","'").replaceAll("”", "\"").replaceAll("“", "\"");
         String[] aaaaa = theString.split("\n");
-        for (String aString : aaaaa) {
-            ta.append("\ndealing with string:" + aString);
-            aString = RefDiviedMain.fixEncoding(aString);
-            output.write(aString);
-        }
-
+        Main.fixEncoding(aaaaa,RefDiviedMain.ta,output);
         output.close();
 
         ta.append("\n" + "the final xml file has been written to " + file.getAbsolutePath());
