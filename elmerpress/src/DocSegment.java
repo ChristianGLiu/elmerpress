@@ -73,8 +73,23 @@ public class DocSegment {
     private ArrayList<DocSegment> children = new ArrayList<DocSegment>();
     private ArrayList<String> stringList = new ArrayList<String>();
     private Pattern sPattern = Pattern.compile("^\\[s\\d{0,}\\].+$");
+    private String seletion = null;
+    
+    private boolean isAbc(String aaa) {
+    	boolean bbb = false;
+    	if(aaa!=null & (aaa.contains("Original Article") || aaa.contains("Short Communication"))) {
+    		bbb = true;
+    	}
+    	return bbb;
+    }
 
     public DocSegment() {
+    	seletion = !("").equals(Main.isOriginal)? Main.isOriginal: 
+        	!("").equals(RefDiviedMain.isOriginal) ? RefDiviedMain.isOriginal : 
+        		!("").equals(RefSouceOnlyMain.isOriginal)?RefSouceOnlyMain.isOriginal:
+        			"";
+        
+        System.out.println("seletion is:"+seletion);
     }
 
     public void setTitle(String a) {
@@ -123,6 +138,9 @@ public class DocSegment {
     public List<Element> getGeneral(ArrayList<String> stringList, String tag, String aaa) {
 
         List<Element> secList = new ArrayList();
+      
+        
+        //String  = Main.isOriginal;
 
         for (int i = 0; i < stringList.size(); i++) {
             String oneString = stringList.get(i);
@@ -173,7 +191,9 @@ public class DocSegment {
                 this.id = "s" + secIndex;
                 Element sec = doc.createElement("sec");
                 sec.setAttribute("id", this.id);
-                //if(!aaa.equals("isBack")) sec.setAttribute("sec-type", theType);
+                if(secIndex==2 && isAbc(this.seletion)) {
+                   sec.setAttribute("sec-type", "materials | methods");
+                }
                 Element secTitle = doc.createElement("title");
                 sec.appendChild(secTitle);
                 secTitle.appendChild(doc.createTextNode(title));
@@ -300,7 +320,9 @@ public class DocSegment {
                 this.id = "s" + theIndex + letterList[inndex - 1];
                 Element sec = doc.createElement("sec");
                 sec.setAttribute("id", this.id);
-                // sec.setAttribute("sec-type", theType);
+                if(secIndex==2 && isAbc(this.seletion)) {
+                    sec.setAttribute("sec-type", "materials | methods");
+                 }
                 Element secTitle = doc.createElement("title");
                 sec.appendChild(secTitle);
                 secTitle.appendChild(doc.createTextNode(title));
@@ -436,7 +458,9 @@ public class DocSegment {
                 this.id = theIndex + inndex;
                 Element sec = doc.createElement("sec");
                 sec.setAttribute("id", this.id);
-                // sec.setAttribute("sec-type", theType);
+                if(secIndex==2 && isAbc(this.seletion)) {
+                    sec.setAttribute("sec-type", "materials | methods");
+                 }
                 Element secTitle = doc.createElement("title");
                 sec.appendChild(secTitle);
                 secTitle.appendChild(doc.createTextNode(title));
@@ -538,6 +562,9 @@ public class DocSegment {
                 this.id = "a" + secIndex;
                 Element sec = doc.createElement("sec");
                 sec.setAttribute("id", this.id);
+                if(secIndex==2 && isAbc(seletion)) {
+                    sec.setAttribute("sec-type", "materials | methods");
+                 }
                 Element secTitle = doc.createElement("title");
                 sec.appendChild(secTitle);
                 secTitle.appendChild(doc.createTextNode(title));

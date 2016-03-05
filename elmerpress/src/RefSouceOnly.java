@@ -534,7 +534,9 @@ jProgressBar1.setStringPainted(true);
 
             this.initMagzineParams(String.valueOf(this.jComboBox1.getSelectedItem()).toString());
             RefSouceOnlyMain.ta = jTextArea1;
+            RefDiviedMain.cleanArrs();
             RefSouceOnlyMain.cleanArrs();
+            Main.cleanArrs();
             RefSouceOnlyMain.init(fileName);
             try {
                 RefSouceOnlyMain.generateXML(RefSouceOnlyMain.finalXMLString, jTextField2.getText());

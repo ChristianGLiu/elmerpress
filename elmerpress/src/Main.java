@@ -33,6 +33,8 @@ import java.util.regex.Pattern;
 
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+
 import org.apache.poi.hpsf.DocumentSummaryInformation;
 
 import org.apache.poi.hwpf.*;
@@ -103,45 +105,49 @@ public class Main {
     public static String magzineShortTitle;
     public static String issn_ppub;
     public static String issn_epub;
+    public static String textNote="This is an open-access article distributed under the terms of the Creative Commons Attribution-NonCommercial 4.0 International License, which permits unrestricted non-commercial use, distribution, and reproduction in any medium, provided the original work is properly cited.";
 
     public static void cleanArrs() {
 
+    	if(ta!=null) {
         ta.setText("");
+        ta.append("cleaning arrays \n");}
 
         isValidBoday = false;
         isValidBack = false;
         isValidRefs = false;
 
-        ta.append("cleaning arrays \n");
-
-        refs.clear();
-
-        figAlready.clear();
-
-        abstractArr.clear();
         
+    if(refs!=null)
+        refs.clear();
+if(figAlready!=null)
+        figAlready.clear();
+if(abstractArr!=null)
+        abstractArr.clear();
+        if(keywordArr!=null)
         keywordArr.clear();
 
-
+if(discussion!=null)
         discussion.clear();
 
-
+if(acknowledgement!=null)
         acknowledgement.clear();
-
+if(disclosure!=null)
         disclosure.clear();
-
+if(table!=null)
         table.clear();
-
+if(figure!=null)
         figure.clear();
-
+if(authors!=null)
         authors.clear();
-
+if(references!=null)
         references.clear();
+        if(articleType!=null)
+        articleType.clear();
 
 
 
     }
-
     public static void init(String fileName) {
 
 
@@ -1110,7 +1116,7 @@ public class Main {
 
 
 
-        license_p.appendChild(doc.createTextNode("This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited."));
+        license_p.appendChild(doc.createTextNode(textNote));
 
 
 
@@ -1395,11 +1401,13 @@ public class Main {
 
                 if (context.contains("Email:")) {
                     String[] aaa = context.split("Email:");
-                    e14.appendChild(doc.createTextNode(aaa[0] + " Email: "));
+                    e14.appendChild(doc.createTextNode(aaa[0] + "Email: "));
                     Element e20 = doc.createElement("email");
                     e14.appendChild(e20);
+                    aaa[1]=aaa[1]==null?"":aaa[1].trim();
                     e20.appendChild(doc.createTextNode(aaa[1]));
                 } else {
+                	context=context==null?"":context.trim();
                     e14.appendChild(doc.createTextNode(context));
                 }
 
@@ -1545,6 +1553,14 @@ public class Main {
 
         return tableFrame;
     }
+    
+    public static String filterString(String a) {
+    	String result = "";
+    	if(a!=null && !a.equals("")) {
+    	   a.replaceAll("&#160;", " ");
+    	}
+    	return result;
+    }
 
     public static void readMyDocument(String fileName) {
 
@@ -1561,7 +1577,7 @@ public class Main {
 
 
             /** Read the content **/
-            readParagraphs(doc);
+            readParagraphs(doc,Main.ta,Main.refs);
 
 
 
@@ -2107,16 +2123,16 @@ public class Main {
 
     }
 
-    public static void readParagraphs(HWPFDocument doc) throws Exception {
+    public static void readParagraphs(HWPFDocument doc,JTextArea taa, ArrayList<String> tbb) throws Exception {
 
-        WordExtractor we = new WordExtractor(doc);
+    	WordExtractor we = new WordExtractor(doc);
 
 
 
         /**Get the total number of paragraphs**/
         String[] paragraphs = we.getParagraphText();
 
-        ta.append("\n" + "Total Paragraphs: " + paragraphs.length);
+        taa.append("\n" + "Total Paragraphs: " + paragraphs.length);
 
 
 
@@ -2124,14 +2140,14 @@ public class Main {
 
 
 
-            ta.append("\n" + "Length of paragraph " + (i + 1) + ": " + paragraphs[i].toString());
+            taa.append("\n" + "Length of paragraph " + (i + 1) + ": " + paragraphs[i].toString());
 
 
 
             if (paragraphs[i].toString() != null && paragraphs[i].toString().trim().length() > 1) {
                 String temp = paragraphs[i].toString().trim();
 
-                refs.add(temp);
+                tbb.add(temp);
 
             }
 
@@ -2143,6 +2159,7 @@ public class Main {
 
 
     }
+    
 
     public static void readHeader(HWPFDocument doc, int pageNumber) {
 
@@ -2201,40 +2218,57 @@ public class Main {
     }
     public final static String prefixFileName = "c:\\";
 
-    public static String fixEncoding(String queryString) {
-        String result = "";
+    public static void fixEncoding(String[] aaaaa,JTextArea taa,Writer output) {
+      
 
-
+        String errorString = "";
 
 
         //System.out.println("");
 
         UnicodeBlock myBlock = null;
-
-        for (int i = 0; i < queryString.length(); i++) {
-            char theChar = queryString.charAt(i);
-            byte bValue = (byte) theChar;
-            // System.out.println("[" + i + " => '" + (char) data[i]
-            //     + "'] Is defined: "
-            //     + Character.isDefined(new Byte(data[i]).intValue()));
-            try {
-                myBlock = Character.UnicodeBlock.of(new Byte(bValue).intValue());
-                result += theChar;
-            } catch (IllegalArgumentException e) {
-                int aaa = (int) theChar;
-                ta.append("ERROR HAPPENING: found ilegal char at index " + i + " : "
-                        + theChar + "\n");
-                Main.error("ERROR HAPPENING: found ilegal char at index " + i + " : "
-                        + theChar + "\nPLESE verfiy it in generated XML file.\nSystem already automatically convert it into &#" + aaa + ";");
-                result = result + "&#" + aaa + ";";
+        
+        for (String queryString : aaaaa) {
+        	
+        	 String result = "";
+            taa.append("\ndealing with string:" + queryString);
+            for (int i = 0; i < queryString.length(); i++) {
+                char theChar = queryString.charAt(i);
+                byte bValue = (byte) theChar;
+                // System.out.println("[" + i + " => '" + (char) data[i]
+                //     + "'] Is defined: "
+                //     + Character.isDefined(new Byte(data[i]).intValue()));
+                try {
+                    myBlock = Character.UnicodeBlock.of(new Byte(bValue).intValue());
+                    result += theChar;
+                } catch (IllegalArgumentException e) {
+                    int aaa = (int) theChar;
+                    result = result + "&#" + aaa + ";";
+                    if(aaa==160) {
+                    	result=" ";
+                    }
+                    errorString+="ERROR HAPPENING: found ilegal char at index " + i + " : "
+                            + theChar + "\nPLESE verfiy it in generated XML file.\nSystem already automatically convert it into &#" + aaa + ";\n";
+                }
             }
+
+            
+            try {
+				output.write(result);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
 
-        ta.append("Finished");
-        return result;
-
-
-
+        
+        if(!errorString.equals("")) {
+        	errorString = "special characters list:\n" + errorString + "Finished";
+        	taa.append(errorString);
+            RefSouceOnlyMain.error(errorString);
+            
+        }
+        
     }
 
     private static void replaceChar(String[] aaa) {
@@ -2262,11 +2296,7 @@ public class Main {
         theString = theString.replaceAll("‘", "&#8216;").replaceAll("’", "&#8217;").replaceAll("”", "&#8221;").replaceAll("“", "&#8220;").replaceAll("≥", "&#8805;").replaceAll("≤", "&#8804;").replace("•", "&#8226;");
 //theString = theString.replaceAll("‘","'").replaceAll("’","'").replaceAll("”", "\"").replaceAll("“", "\"");
         String[] aaaaa = theString.split("\n");
-        for (String aString : aaaaa) {
-            ta.append("\ndealing with string:" + aString);
-            aString = Main.fixEncoding(aString);
-            output.write(aString);
-        }
+        Main.fixEncoding(aaaaa,Main.ta,output);
 
         output.close();
 
