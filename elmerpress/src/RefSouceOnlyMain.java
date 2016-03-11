@@ -1396,7 +1396,7 @@ if(references!=null)
 
                 if (context.contains("Email:")) {
                     String[] aaa = context.split("Email:");
-                    e14.appendChild(doc.createTextNode(aaa[0].trim() + "Email: "));
+                    e14.appendChild(doc.createTextNode(aaa[0].trim() + " Email: "));
                     Element e20 = doc.createElement("email");
                     e14.appendChild(e20);
                     aaa[1]=aaa[1]==null?"":aaa[1].trim();

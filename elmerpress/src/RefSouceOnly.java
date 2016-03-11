@@ -634,7 +634,7 @@ private void initMagzineParams(String a) {
         RefSouceOnlyMain.issn_ppub = "1920-4531";
 
     } else if(a.contains("Gastroenterology Research")) {
-        RefSouceOnlyMain.magzineShortTitle = "Gastroenterol Resa";
+        RefSouceOnlyMain.magzineShortTitle = "Gastroenterol Res";
         RefSouceOnlyMain.magzineTitle = "Gastroenterology Research";
         RefSouceOnlyMain.issn_epub = "1918-2813";
         RefSouceOnlyMain.issn_ppub = "1918-2805";
