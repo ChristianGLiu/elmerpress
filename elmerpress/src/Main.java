@@ -2243,9 +2243,10 @@ if(references!=null)
                     result += theChar;
                 } catch (IllegalArgumentException e) {
                     int aaa = (int) theChar;
-                    result = result + "&#" + aaa + ";";
                     if(aaa==160) {
-                    	result=" ";
+                    	result+=" ";
+                    } else {
+                    	result = result + "&#" + aaa + ";";
                     }
                     errorString+="ERROR HAPPENING: found ilegal char at index " + i + " : "
                             + theChar + "\nPLESE verfiy it in generated XML file.\nSystem already automatically convert it into &#" + aaa + ";\n";
