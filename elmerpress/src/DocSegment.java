@@ -562,9 +562,9 @@ public class DocSegment {
                 this.id = "a" + secIndex;
                 Element sec = doc.createElement("sec");
                 sec.setAttribute("id", this.id);
-                if(secIndex==2 && isAbc(seletion)) {
-                    sec.setAttribute("sec-type", "materials | methods");
-                 }
+                //if(secIndex==2 && isAbc(seletion)) {
+                 //   sec.setAttribute("sec-type", "materials | methods");
+                // }
                 Element secTitle = doc.createElement("title");
                 sec.appendChild(secTitle);
                 secTitle.appendChild(doc.createTextNode(title));

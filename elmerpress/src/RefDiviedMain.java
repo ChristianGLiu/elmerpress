@@ -2197,7 +2197,7 @@ if(references!=null)
         if(!errorString.equals("")) {
         	errorString = "special characters list:\n" + errorString + "Finished";
         	ta.append(errorString);
-            RefSouceOnlyMain.error(errorString);
+            //RefSouceOnlyMain.error(errorString);
             
         }
         return result;
