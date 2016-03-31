@@ -1110,7 +1110,7 @@ if(references!=null)
 
         license.setAttribute("license-type", "open access");
 
-        license.setAttribute("xlink:href", "http://creativecommons.org/licenses/by/2.0/");
+        license.setAttribute("xlink:href", "http://creativecommons.org/licenses/by-nc/4.0/");
 
         Element license_p = doc.createElement("license-p");
 
